@@ -11,9 +11,7 @@ class NumArray {
     }
     
     public int sumRange(int left, int right) {
-        int n=arr[right];
-        if(left==0 && right==0)return arr[right];
-        if(left==0 && right!=0)return arr[right];
+        if(left==0)return arr[right];
         return arr[right]-arr[left-1];
         
     }
