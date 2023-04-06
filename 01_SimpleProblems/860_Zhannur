@@ -1,0 +1,17 @@
+class Solution {
+    public boolean lemonadeChange(int[] bills) {
+        int V = 0, X = 0;
+        for (int i : bills) {
+            if (i == 5) V++;
+            else if (i == 10) { 
+                V--; X++; 
+            } 
+            else if (X > 0 && V >= 1) {
+                X--; V--;
+            }
+            else V -= 3; 
+            if (V < 0) return false;
+        }
+        return true;
+    }
+}
